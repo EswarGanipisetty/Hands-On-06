@@ -1,0 +1,22 @@
+To derive the average runtime complexity of the non-random pivot version of quicksort, 
+we analyze its behavior across all possible inputs.
+Let's denote the average runtime complexity as T(n), where n is the size of the input array.
+
+In this version of quicksort, the pivot selection is deterministic, often chosen as the last element of the array. 
+The array is then partitioned into two subarrays:
+one with elements less than or equal to the pivot and another with elements greater than the pivot. 
+After partitioning, the pivot element is in its correct sorted position, and the algorithm recurses on the two subarrays.
+
+The average-case analysis considers the average behavior of the algorithm over all possible permutations of the input array.
+Assuming the elements are randomly distributed, each recursive call divides the array into two parts approximately in a 1:1 ratio.
+
+Analyzing the recurrence relation for the average-case runtime complexity:
+- Partitioning the array takes O(n) time.
+- After partitioning, the array is split into two subarrays, each with approximately half the size of the original array in the average case.
+
+The recurrence relation is T(n) = 2T(n/2) + O(n), reflecting two recursive calls on subproblems of approximately half the size of the original problem, 
+followed by O(n)  time spent on partitioning the array.
+
+Using the Master theorem, we find that the average runtime complexity of the non-random pivot version of quicksort is  O(n log n) .
+
+Thus, mathematically, the average runtime complexity of the non-random pivot version of quicksort is  O(n log n).
